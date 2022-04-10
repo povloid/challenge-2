@@ -38,4 +38,23 @@
                   message]
         :danger  [:div.alert.alert-danger
                   message]
-        nil))]])
+        nil))]
+   [:br]
+   [:table {:class "table"}
+    [:thead
+     [:tr
+      [:th {:scope "col"} "#"]
+      [:th {:scope "col"} "Tag"]
+      [:th {:scope "col"} "Total"]
+      [:th {:scope "col"} "Answered"]]]
+    [:tbody
+     (->> @(subscribe [::subs/items])
+          (map-indexed (fn [i {:keys [tag
+                                      total
+                                      answered]}]
+                         [:tr
+                          [:th {:scope "row"} (inc i)]
+                          [:td tag]
+                          [:td total]
+                          [:td answered]]))
+          (into [:<>]))]]])

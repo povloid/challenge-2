@@ -50,8 +50,15 @@
  (fn [db [_ result]]
    (log/info result)
    (-> db
-       (assoc :alert {:type    :success
-                      :message "The following result is obtained"}))))
+       (assoc
+        :items (->> result
+                    (mapv (fn [[tag {:keys [total
+                                            answered]}]]
+                            {:tag      tag
+                             :total    total
+                             :answered answered})))
+        :alert {:type    :success
+                :message "The following result is obtained"}))))
 
 (reg-event-db
  ::get-failure

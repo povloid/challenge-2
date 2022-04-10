@@ -13,3 +13,7 @@
 (reg-sub
  ::alert
  :alert)
+
+(reg-sub
+ ::items
+ :items)
