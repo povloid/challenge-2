@@ -1,0 +1,6 @@
+resources/public/js/out
+resources/public/js/app.js
+target/
+node_modules/
+*.log
+.log/*
