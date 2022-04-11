@@ -21,7 +21,7 @@
        (reduce into [])))
 
 (defn make-search-stat [{{:keys [tagged]} :params
-                  {:keys [items]}  :result}]
+                         {:keys [items]}  :result}]
   {:tag      tagged
    :total    (count items)
    :answered (reduce #(+ %1 (if (%2 :is_answered) 1 0)) 0 items)})
