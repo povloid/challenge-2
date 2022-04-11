@@ -16,7 +16,7 @@
    (assoc db :input-s1 value)))
 
 (defn valid? [value]
-  (.test #"^(\w| )+$" value))
+  (.test #"^.+$" value))
 
 (reg-event-fx
  ::query
