@@ -11,7 +11,18 @@
              :tagged   "clojure"
              :site     "stackoverflow"})
 
+
+
 (defn search [params]
+  "Creating search request to stackoverflow.
+
+params example:
+- pagesize 100
+- order    desc
+- sort     creation
+- tagged   clojure
+- site     stackoverflow
+"
   (let [{:keys [body]} (client/get
                         (str api-endpoint "/search")
                         {:cookie-policy :standard

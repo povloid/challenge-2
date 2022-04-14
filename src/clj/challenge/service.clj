@@ -7,6 +7,9 @@
 
 
 (defn search-by-tags [tags]
+  "Send search by tags request
+input prameters: list of tags (strings)
+"
   (->> tags
        (map (fn [tag]
               {:pagesize pagesize
@@ -22,11 +25,16 @@
 
 (defn make-search-stat [{{:keys [tagged]} :params
                          {:keys [items]}  :result}]
+  "Calculate search statistic
+input parameters: result of search by tags request
+"
   {:tag      tagged
    :total    (count items)
    :answered (reduce #(+ %1 (if (%2 :is_answered) 1 0)) 0 items)})
 
 (defn search-by-tags-stat [tags]
+  "Send search by tags request and get statistic
+input prameters: list of tags (strings)"
   (->> tags
        (search-by-tags)
        (map make-search-stat)
