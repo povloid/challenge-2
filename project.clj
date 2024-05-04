@@ -15,14 +15,20 @@
                  [reagent "1.2.0"]
                  [re-frame "1.4.3"]
                  [cljs-ajax "0.8.4"]
-                 [clj-http "3.12.3"]]
+                 [clj-http "3.12.3"]
+                 ;; SQL data
+                 [org.clojure/java.jdbc "0.7.12"]
+                 [mount "0.1.17"]
+                 [hikari-cp "3.0.1"] ;; <- connection pool
+                 ;;[org.firebirdsql.jdbc/jaybird "3.0.12"]
+                 [org.firebirdsql.jdbc/jaybird "5.0.4.java11"]
+                 [org.postgresql/postgresql "42.7.3"]]
 
   :jvm-opts ^:replace ["-Dfile.encoding=UTF-8"]
 
   :plugins [[lein-ring "0.12.6"]
             [lein-cljsbuild "1.1.8" :exclusions [[org.clojure/clojure]]]
             [lein-figwheel "0.5.20"]]
-
 
 
   :auto-clean false
