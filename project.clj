@@ -31,6 +31,8 @@
                  ]
 
   :jvm-opts ^:replace ["-Dfile.encoding=UTF-8"]
+  ;;:jvm-opts ^:replace ["-Xmx700m" "-server"]
+  ;;:jvm-opts ^:replace ["-Xmx1g" "-server"]
 
   :plugins [[lein-ring "0.12.6"]
             [lein-cljsbuild "1.1.8" :exclusions [[org.clojure/clojure]]]
