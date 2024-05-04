@@ -3,7 +3,8 @@
   :url "https://clojure.org"
   :license {:name "Eclipse Public License"
             :url  "http://www.eclipse.org/legal/epl-v10.html"}
-  :dependencies [[org.clojure/clojure "1.11.3"]
+  :dependencies [[org.clojure/clojure "1.11.3"
+                  :refer clojure :exclude [... update-vars update-keys]]
                  [org.clojure/clojurescript "1.11.132"]
                  [cheshire "5.13.0"]
                  [compojure "1.7.1"]
@@ -44,7 +45,8 @@
              :nrepl-port   7888}
 
   :profiles {:dev {:dependencies [[binaryage/devtools "1.0.0"]
-                                  [figwheel-sidecar "0.5.20"]]}
+                                  [figwheel-sidecar "0.5.20"]
+                                  [org.clojure/tools.analyzer "1.2.0"]]}
 
              :uberwar {:aot         :all
                        :omit-source true}
