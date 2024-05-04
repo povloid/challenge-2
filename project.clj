@@ -22,7 +22,13 @@
                  [hikari-cp "3.0.1"] ;; <- connection pool
                  ;;[org.firebirdsql.jdbc/jaybird "3.0.12"]
                  [org.firebirdsql.jdbc/jaybird "5.0.4.java11"]
-                 [org.postgresql/postgresql "42.7.3"]]
+                 [org.postgresql/postgresql "42.7.3"]
+                 ;; Formats
+                 [dk.ative/docjure "1.19.0"] ;; xls
+                 [clj-pdf "2.6.8"]           ;; pdf
+                 [clojure-csv "2.0.2"]       ;; csv
+                 [clj-dbase "0.1.0"]         ;; dbf
+                 ]
 
   :jvm-opts ^:replace ["-Dfile.encoding=UTF-8"]
 
